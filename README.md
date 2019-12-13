@@ -29,9 +29,10 @@ Things you may want to cover:
 |email|varchar|null:false|
 |pass|char|null.false|
 |name|varchar|null.false|
+
 ## Association
-- has many:chat
-- has many:group, through :user_group
+- has_many:chats
+- has_many:groups, through: :user_groups
 
 ## groupテーブル
 |Column|Type|Options|
@@ -39,8 +40,18 @@ Things you may want to cover:
 |user_id|integer|null:false|
 |name|vachar|null.false|
 ## Association
-- has many:chat
-- has many:user, through :user_group
+- has_many:chats
+- has_many:users, through: :user_groups
+
+## group_userテーブル
+|Column|Type|Options|
+|------|----|-------|
+|group_id|integer|null.false,foreign_key: true|
+|user_id|integer|null.false,foreign_key: true|
+
+## Association
+- belongs_to user
+- belongs_to group
 
 ## chatテーブル
 |Column|Type|Options|
@@ -49,6 +60,10 @@ Things you may want to cover:
 |image|string||
 |user_id|integer|null.false|
 |group_id|integer|null.false|
+
+## Association
+- belong_to :user
+
 
 ## user_groupテーブル
 |Column|Type|Options|
