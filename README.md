@@ -57,8 +57,8 @@ Things you may want to cover:
 ## chatテーブル
 |Column|Type|Options|
 |------|----|-------|
-|body|text||
-|image|string||
+|body|text|
+|image|string|
 |user|reference|null.false|
 |group|reference|null.false|
 
