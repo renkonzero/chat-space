@@ -5,17 +5,16 @@
         = current_user.name
     .side-bar__header_textbox_right
       .side-bar__header_textbox_new
-        = link_to do
+        = link_to new_group_path do
           %i.fas.fa-edit.icon-new
       .side-bar__header_textbox_edit
         = link_to edit_user_path(current_user) do
           = icon('fas','cog', class: 'icon-edit')
   .side-bar__group
-    .side-bar__group_name
-      テックキャンプ
-    .side-bar__group_text
-      メッセージはありません
-    .side-bar__group_name
-      テックキャンプ
-    .side-bar__group_text
-      メッセージはありません
+    - current_user.groups.each do |group|
+      .side-bar__group_set
+        = link_to '#' do
+          .side-bar__group_set_name
+            = group.name
+          .side-bar__group_set_text
+            メッセージはまだありません。
