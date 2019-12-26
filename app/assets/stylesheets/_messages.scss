@@ -59,16 +59,18 @@ $mainwhite:#ffffff;
     background-color: #2f3e51;
     height: calc(100vh - 100px);
     padding: 20px;
-      &_name{
-        font-size: 15px;
-      }
-      &_text{
-        font-size: 11px;
-        margin-top: 5px;
-        margin-bottom: 40px;
 
+      &_set{
+        &_name{
+          font-size: 15px;
+        }
+        &_text{
+          font-size: 11px;
+          margin-top: 5px;
+          margin-bottom: 40px;
+
+        }
       }
-      
   }
 }
 
