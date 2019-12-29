@@ -1,5 +1,6 @@
-
 .chat-main
+  = render partial: 'main_chat', collection: @messages
+
   .chat-main__header
     .chat-main__header_left
       .chat-main__header_left_group
@@ -8,32 +9,26 @@
         menber:masa
     .chat-main__header_right
       = link_to "#" do
-        Edit
+        %font{:color => "38aef0"} Edit
   .chat-main__message
     .chat-main__message_list
       .chat-main__message_list_data
         .chat-main__massage_list_data_menber
-          masa
+          = message.user.name
         .chat-main__message_list_data_date
-          2019/11/20(wed) 17:34:51
-      .chat-main__message_list_text
-        おはよう
-    .chat-main__message_list
-      .chat-main__message_list_data
-        .chat-main__massage_list_data_menber
-          masa
-        .chat-main__message_list_data_date
-          2019/11/20(wed) 17:34:51
-      .chat-main__message_list_text
-        朝だよ
+          = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+      .chat-main__message_list_form
+        - if message.content.present?
+          %p.chat-main__message_list_form_content
+            = message.content
+        = image_tag message.image.url, class: 'chat-main__message_list_form_image' if message.image.present?
+
   .chat-main__footer
     .chat-main__footer_group
-      .chat-main__footer_group_form
-        %input.chat-main__footer_group_form_text{:placeholder => "type a message"}
-        %label.chat-main__footer_group_form_picture{:for => "chat_image"}
-          %i.far.fa-image
-          %input.chat-main__footer_group_form_picture_file{:type => "file", :id => "chat_image"}
-      %input.chat-main__footer_group_btn{:type => "submit",:value => "Send"}
-        
-
-
+      .chat-main__foote_group_form
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'chat-main__footer_group_form＿text', placeholder: 'type a message' 
+          = f.label :image, class: 'chat-main__footer_group_form_picture' do
+            = icon('fas', 'image', class: 'image-icon') 
+            = f.file_field :image, class: 'hidden'
+          = f.submit 'Send', class: 'chat-main__footer_group_form_btn' 
