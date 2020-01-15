@@ -1,21 +1,23 @@
-.chat-main__header
-  .chat-main__header_left
-    .chat-main__header_left_group
-      = @group.name
-    .chat-main__header_left_menber
-      - @group.group_users.each do |group_user|
-        = group_user.user.name
-  .chat-main__header_right
-    = link_to edit_group_path(@group.id) do
-      %font{:color => "38aef0"} Edit
-.chat-main__message
-  = render @messages
-.chat-main__footer
-  .chat-main__footer_group
-    .chat-main__foote_group_form
-      = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'chat-main__footer_group_form＿text', placeholder: 'type a message' 
-        = f.label :image, class: 'chat-main__footer_group_form_picture' do
-          = icon('fas', 'image', class: 'image-icon') 
-          = f.file_field :image, class: 'hidden'
-        = f.submit 'Send', class: 'chat-main__footer_group_form_btn' 
+.chat-main
+  .chat-main__header
+    .chat-main__header_left
+      .chat-main__header_left_group
+        = @group.name
+      .chat-main__header_left_menber
+        - @group.group_users.each do |group_user|
+          = group_user.user.name
+    .chat-main__header_right
+      = link_to edit_group_path(@group.id) do
+        %font{:color => "38aef0"} Edit
+  .chat-main__message
+    = render @messages
+  .chat-main__footer
+    .chat-main__footer_group
+      .chat-main__foote_group_form
+        = form_for [@group, @message] do |f|
+          = f.text_field :content, class: 'chat-main__footer_group_form＿text', placeholder: 'type a message' 
+          .chat-main__footer_group_form_text__mask
+            = f.label :image, class: 'chat-main__footer_group_form_text__mask__image' do
+              = icon('fas', 'image', class: 'image_icon') 
+              = f.file_field :image, class: 'hidden'
+          = f.submit 'Send', class: 'chat-main__footer_group_form_btn' 

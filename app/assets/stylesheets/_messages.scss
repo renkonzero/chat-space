@@ -159,13 +159,22 @@ a{
     background-color: #d2d2d2;
     padding: 20px 40px;
     height: 90px;
+    position: relative;
+    .image_icon{
+      font-size: 1.5rem;
+      cursor: pointer;
+      position: absolute;
+      top: 30px;
+      right: 210px;
+      bottom: 5px;
+      z-index: 10;
+    
+    }
       &_group{
         height: 50px;
 
           &_form{
             background-color: $mainwhite;
-            width: 100%;
-
 
               &＿text{
                 color: #434a54;
@@ -173,25 +182,16 @@ a{
                 padding: 0 40px 0 10px;
                 border: none;
                 width: calc(100% - 100px - 60px);
-              }
-          
-              &_picture{
-                position: relative;
+                  &__mask{
 
-                .image-icon{
-                  font-size: 1.5rem;
-                  cursor: pointer;
-                  position: absolute;
-                  top: 0;
-                  bottom: 0;
-                  right: 10px;
-                  margin: auto;
+                    &__image{
+
+
+                    }
                 }
-                .hidden{
-                  display: none;
-                }
-              
               }
+
+              
           
               &_btn{
                 width: 100px;
@@ -199,13 +199,23 @@ a{
                 background-color: $mainblue;
                 color: $mainwhite;
                 font-size: 16px;
-                border: none;
                 margin-left: 15px;
-                padding: 0 30px;
+                border: none;
                 float: right;
                 cursor: pointer;
+                position: absolute;
+                top: 20px;
+                right: 40px;
+
               }
+            
           }
+        
       }
   }
+}
+
+
+.hidden{
+  display: none;
 }
