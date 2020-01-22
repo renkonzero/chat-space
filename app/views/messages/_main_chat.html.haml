@@ -13,7 +13,7 @@
     = render @messages
   .chat-main__footer
     .chat-main__footer_group
-      .chat-main__foote_group_form
+      .chat-main__footer_group_form
         = form_for [@group, @message] do |f|
           = f.text_field :content, class: 'chat-main__footer_group_form＿text', placeholder: 'type a message' 
           .chat-main__footer_group_form_text__mask
