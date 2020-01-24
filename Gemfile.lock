@@ -248,6 +248,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bundler
   byebug
   carrierwave
   coffee-rails (~> 4.2)

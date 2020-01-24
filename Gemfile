@@ -65,6 +65,7 @@ gem 'mini_magick'
 gem 'rails-i18n'
 gem 'jquery-rails'
 gem 'pry-rails'
+gem 'bundler'
 
 group :production do
   gem 'unicorn', '5.4.1'
