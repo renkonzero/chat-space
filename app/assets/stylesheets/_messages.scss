@@ -173,17 +173,18 @@ a{
     }
       &_group{
         height: 50px;
+        width: calc(100% - 150px);
 
           &_form{
             background-color: $mainwhite;
-            width: calc(100% - 150px);
-
+            width: 100%;
+            
               &＿text{
                 color: #434a54;
                 line-height: 50px;
                 padding: 0 40px 0 10px;
                 border: none;
-                width: calc(100% - 100px - 60px);
+                width: 100%;
                   &__mask{
 
                     &__image{
@@ -201,7 +202,7 @@ a{
                 background-color: $mainblue;
                 color: $mainwhite;
                 font-size: 16px;
-                margin-left: 15px;
+                margin-left: 30px;
                 border: none;
                 float: right;
                 cursor: pointer;
