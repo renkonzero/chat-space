@@ -71,6 +71,8 @@ gem 'rails-i18n'
 gem 'jquery-rails'
 gem 'pry-rails'
 gem 'bundler'
+gem 'fog-aws'
+gem 'source'
 
 group :production do
   gem 'unicorn', '5.4.1'
